@@ -1,0 +1,249 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group 'com.gate6'             //-----------------------------------
+//apply plugin: 'com.jfrog.bintray'////////////////////////////////////////////////////////////////////////////
+version 1.0                  //-----------------------------------
+
+android {
+    compileSdkVersion rootProject.COMPILE_SDK_VERSION // compile sdk version
+    defaultConfig {
+        minSdkVersion rootProject.MIN_SDK_VERSION // minmum sdk version
+        targetSdkVersion rootProject.COMPILE_SDK_VERSION // target sdk version
+        versionCode 1
+        versionName "1.0"
+// Enabling multidex support.
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+//apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android'
+
+//android {
+//    compileSdkVersion 28
+//
+//
+//    defaultConfig {
+//        minSdkVersion 17
+//        targetSdkVersion 28
+//        versionCode 1
+//        versionName "1.0"
+//
+
+//
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+////    compileOptions {
+////        sourceCompatibility JavaVersion.VERSION_1_8
+////        targetCompatibility JavaVersion.VERSION_1_8
+////    }
+//
+//}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:appcompat-v7:$rootProject.ANDROID_SUPPORT_VERSION"
+    implementation 'com.android.support:design:28.0.0'
+
+    //noinspection GradleCompatible
+
+    //    implementation 'com.android.support:support-v13:28.0.0'
+
+    //    implementation 'com.android.support:support:28.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
+//    implementation 'com.android.support:support-v4:28.0.0'
+
+    //    implementation 'com.android.support:design:28.0.0'
+
+    //    implementation 'com.google.android.material:material:1.0.0'
+
+    //    implementation 'com.google.android.gms:play-services-vision:18.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+
+    //    compile ('com.google.android.gms:play-services:6.5.87') {
+
+    //        exclude module: 'support-v4'
+
+    //    }
+
+    //  noinspection GradleDynamicVersion
+
+    //////////
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'pub.devrel:easypermissions:0.2.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+
+//dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    //noinspection GradleDependency,GradleCompatible
+//    implementation 'com.android.support:appcompat-v7:27.1.1'
+//
+//
+////noinspection GradleDependency,GradleCompatible
+//    implementation 'com.android.support:support-v4:26.1.0'
+////noinspection GradleDependency,GradleCompatible
+//    implementation 'com.android.support:design:26.1.0'
+////noinspection GradleCompatible
+//    implementation 'com.google.android.gms:play-services-vision:18.0.0'
+
+//    testImplementation 'junit:junit:4.12'
+
+//    //noinspection GradleDynamicVersion
+
+////    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+////////////
+//    implementation 'com.android.volley:volley:1.1.1'
+//    implementation 'com.google.code.gson:gson:2.8.2'
+//    implementation 'pub.devrel:easypermissions:0.2.1'
+//    testImplementation 'junit:junit:4.12'
+
+//}
+
+
+
+//repositories {
+//    mavenCentral()
+//}
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
+//
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//artifacts {
+//    archives javadocJar
+//    archives sourcesJar
+//}
+//
+//group = 'com.gate6' // library package name
+//version = '1.0.0' // library version
+//
+//install {
+//    repositories.mavenInstaller {
+//        pom.project {
+//            name 'Vijay Bharati' // Your good name
+//            description 'A library for iris recognition'
+//            url 'https://github.com/vijaybharatigate6/iris_recognition'
+//            inceptionYear '2019'
+//
+//            packaging 'aar'
+//            groupId 'com.gate6' // package name of your library
+//            artifactId 'g6-iris-recognition' //must be same of library name as bintray
+//            version '1.0.0'
+//
+//            licenses {
+//                license {
+//                    name 'The MIT License (MIT)'
+//                    url 'https://opensource.org/licenses/MIT'
+//                }
+//            }
+//            scm {
+//                connection 'https://github.com/vijaybharatigate6/iris_recognition.git'
+//                url 'https://github.com/vijaybharatigate6/iris_recognition'
+//
+//            }
+//            developers {
+//                developer {
+//                    id = 'gate6-iris-recognition' //bintray username
+//                    name 'Vijay Bharati'
+//                }
+//            }
+//        }
+//    }
+//}
+//// Bintray
+//Properties properties = new Properties()
+//properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//
+//
+//bintray {
+//    // user and key, fetch from local.properties file.
+//    // Follow this step
+//    /*
+//      sdk.dir=/home/Vijay/Android/Sdk
+//      user=gate6-iris-recognition // your username of bitray account
+//      key=8bcf6b4769a5aad3adc88fe154402a7ee5de6b93 // bintray key.
+//
+//      To find this key follow this step-
+//      1. Go to edit profile and click 'Api Key' from list.
+//      2. Put password and show key. copy and paste here.
+//
+//      Note : Do not this
+//      user="gate6-iris-recognition"
+//      key="8bcf6b4769a5aad3adc88fe154402a7ee5de6b93"
+//     */
+//
+//    user = properties.getProperty('user')
+//    key = properties.getProperty('key')
+//    configurations = ['archives']
+//    pkg {
+//        repo = 'gate6-iris-recognition' // must be same as on bintray repo name
+//        name = 'g6-iris-recognition' // must be same of library name as bintray
+//        userOrg = 'gate6-iris-recognition' // this is username of bintray account
+//        licenses = ['MIT']
+//        vcsUrl = 'https://github.com/vijaybharatigate6/iris_recognition'
+//        publish = true
+//        version {
+//            name = '1.0.0'
+//            desc = 'This is updated version 1.0.0'
+//            released = new Date()
+//            vcsTag = 'v1.0.0'
+//        }
+//    }
+//}
+//
+//
+//
+//
+//
