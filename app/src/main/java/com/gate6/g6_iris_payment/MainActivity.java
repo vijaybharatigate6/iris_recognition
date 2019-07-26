@@ -1,6 +1,5 @@
 package com.gate6.g6_iris_payment;
 
-import android.content.ComponentCallbacks;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -9,12 +8,12 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.gate6.g6_iris_payment.R;
-
 import com.gate6.g6_iris_recognition.g6_irisRecognition;
 import com.gate6.g6_iris_recognition.utilsPkg.CallBackListiners;
 import com.gate6.g6_iris_recognition.utilsPkg.RequestType;
 import org.json.JSONObject;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements CallBackListiners {
     private Context mContext;
@@ -35,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements CallBackListiners
     }
 
     @Override
-    public void onCompleteResponse(int RequestTypee, JSONObject irisData) {
+    public void onCompleteResponse(int RequestTypee, JSONObject irisData, List irisEncodingList) {
         if (RequestTypee == RequestType.IRIS_IMAGE_CHECK_REQUEST) {
-            Log.v("iris1", "irisData"+irisData);
+            Log.v("iris1", "irisData"+irisData + "\n irislist = "+irisEncodingList);
         }else if (RequestTypee == RequestType.IRIS_REGISTER_REQUEST) {
             Log.v("iris2", "irisData"+irisData);
         }else if (RequestTypee == RequestType.IRIS_RECOGNITION_REQUEST) {

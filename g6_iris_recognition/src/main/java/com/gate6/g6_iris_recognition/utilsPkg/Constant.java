@@ -5,7 +5,6 @@ public class Constant {
     public static final String SUCCESS = "success";
 
 
-//    "http://10.1.0.22:5000/image_stream"
     // local machine server
     public static String BASE_URL = "http://10.1.0.158:5000/";
     // public server

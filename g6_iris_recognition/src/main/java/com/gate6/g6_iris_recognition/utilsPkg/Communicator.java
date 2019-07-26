@@ -174,9 +174,7 @@ public class Communicator {
                     if (listiners != null) {
                         if (requestType == RequestType.IRIS_REGISTER_REQUEST) {
                             data = gson.fromJson(response.toString(), ImageUploadModel.class);
-                        }//else   if (requestType == RequestType.VERIFY_REQUEST) {
-//                            data = gson.fromJson(response.toString(), ImageUploadModel.class);
-//                        }
+                        }
 
                         listiners.onCompleteResponse(requestType, data);
                     }
@@ -261,96 +259,6 @@ public class Communicator {
 
 
 
-
-
-//    public void addNewStringRequestPost(final Context mContext, final int requestType, String url, final HashMap<String, String> bundle, final NetworkListiners listiners) {
-//        this.mContext = mContext;
-//        this.requestType = requestType;
-//        this.url = url;
-//        this.listiners = listiners;
-//        this.bundle = bundle;
-//
-//        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                AppBeanData data = null;
-//                Gson gson = new Gson();
-//                try {
-//                    if (listiners != null) {
-//                        if (requestType == RequestType.LOGOUT_REQUEST) {
-////                            data = gson.fromJson(response.toString(), LoginSsoApi.class);
-//                        }
-//                        listiners.onCompleteResponse(requestType, response);
-//                    }
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    //      Utils.getInstance().setToastTypefaceforShort(mContext, mContext.getString(R.string.json_error));
-//                    listiners.onError(null);
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                if (listiners != null) {
-//                    try {
-//                        Log.v("aman", "onErrorResponse called" + error);
-//                        if (error instanceof NoConnectionError) {
-//                            Utils.getInstance().showToast(mContext, mContext.getString(R.string.no_network_connection));
-//                            listiners.onError(error);
-//                        } else if (error instanceof TimeoutError) {
-//                            Utils.getInstance().showToast(mContext, mContext.getString(R.string.time_out_error));
-//                            listiners.onError(error);
-//                        }
-//                        if (error instanceof AuthFailureError) {
-//                            listiners.onError(error);
-//                        } else {
-//                            Utils.getInstance().showToast(mContext, mContext.getString(R.string.common_error_message));
-//                            listiners.onError(error);
-//                        }
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        }) {
-//
-//
-//            @Override
-//            protected Map<String, String> getParams() {
-//                Map<String, String> param = new HashMap<String, String>();
-//                param = bundle;
-//                return param;
-//            }
-//
-//            @Override
-//            public String getBodyContentType() {
-//                return "application/x-www-form-urlencoded";
-//            }
-//
-//            @Override
-//            public Map<String, String> getHeaders() {
-//                Map<String, String> headers = new HashMap<>();
-//                headers.put("Content-Type", "application/x-www-form-urlencoded");
-//                return headers;
-//            }
-//        };
-//
-//        request.setRetryPolicy(new DefaultRetryPolicy(
-//                30000,
-//                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-//        if (ConnectionDetector.checkNetworkAvailablity(mContext)) {
-//            VolleySingleton.getInstance(mContext).addToRequestQueue(request);
-//        } else {
-//            try {
-//                Utils.getInstance().showNoInternetAlertDialog(mContext, mContext.getResources().getString(R.string.alert_need_internet_connection), "Alert !");
-//                listiners.onError(null);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-//
 
     public void cancelAllRequestQueue() {
         try {
