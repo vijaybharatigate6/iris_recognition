@@ -92,7 +92,7 @@ After 2nd stage complete,3st to check image to iris recognition:
   * All scanned images need to be on same shapes/size(eg - 320x240).
   * As per image size and quality/noise, need to change parameter of filters according.
   * 90% above eye iris need to be capture on image taken from scanner.
-  * Need min 5 clearer images to train a model.
+  * Need min 3 clearer images to train a model.
   * After all this done according, set threshold of Hamming Distance to recognize.
 
 
