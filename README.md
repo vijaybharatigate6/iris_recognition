@@ -14,11 +14,6 @@
  
 ## Installation
 
-##### - Install Python
-
-[Windows](http://timmyreilly.azurewebsites.net/python-flask-windows-development-environment-setup/), [Mac](http://docs.python-guide.org/en/latest/starting/install/osx/), [Linux](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html)
-
-
 ##### - Add the dependency to use library in project:
   ```
      implementation 'com.github.vijaybharatigate6:iris_recognition:1.0'  
