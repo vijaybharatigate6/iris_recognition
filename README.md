@@ -16,14 +16,14 @@
  
 ## Installation
 
-##### - Add the dependency to use library in project:
+#####  Add the dependency to use library in project:
   ```
      implementation 'com.github.vijaybharatigate6:iris_recognition:1.0'  
   ```  
  
 ## Run Project
 
-Once all the settings of project are configured. To start import.
+Once all the settings of the project are configured. Then start with import:
 
 ```shell
    import com.gate6.g6_iris_recognition.g6_irisRecognition;
@@ -32,7 +32,7 @@ Once all the settings of project are configured. To start import.
    import android.content.Context;
 ```
 
-After import, need to implements CallBackListiners in class & add implement method also in your code:
+After import, need to implement CallBackListiners in class & add its method in class:
 
 ```shell
    public class ClassName extends AppCompatActivity implements CallBackListiners {
@@ -57,30 +57,33 @@ After import, need to implements CallBackListiners in class & add implement meth
   }    
 ```
 
-Once all complete,1st to test iris_image and get that image encoding:
+#### 1. Use following method to test iris image and get image encoding:
 
 ```shell
    g6_irisRecognition.getInstance().iris_check(mContext,image_path,this);
-   - Get image response on implement onCompleteResponse method with request type IRIS_IMAGE_CHECK_REQUEST
+   
+   - Get response on implemented onCompleteResponse method with request type IRIS_IMAGE_CHECK_REQUEST
 ```
 
-After 1st stage complete,2st to register user for iris recognition:
+#### 2. After stage 1, use following method to register a user for iris recognition:
 
 ```shell
    g6_irisRecognition.getInstance().iris_registration(mContext,companyId,userName,imageDataList,this);
+   
    companyId        ===>  company id where you want register.
    userName         ===>  need unique username(email).after iris recognition in responce return we get username of detected person.
    imageDataList    ===>  In list add 3 iris image check encoding we get in 1st stage.
                           eg-: imageDataList=[iris_check_image1_Encoding,iris_check_image2_Encoding,iris_check_image3_Encoding]
-   - Get registered response on implement onCompleteResponse method with request type IRIS_REGISTER_REQUEST
+   - Get response on implemented onCompleteResponse method with request type IRIS_REGISTER_REQUEST
 ```
 
-After 2nd stage complete,3st to check image to iris recognition:
+#### 3. After stage 2, use following method to check image output for iris recognition:
 
 ```shell
    g6_irisRecognition.getInstance().iris_recognition(mContext,companyId,path,this);
+   
    companyId        ===>  company id where you want register.
-   - Get iris_recognition response on implement onCompleteResponse method with request type IRIS_RECOGNITION_REQUEST
+   - Get response on implemented onCompleteResponse method with request type IRIS_RECOGNITION_REQUEST
 ```
 
 
