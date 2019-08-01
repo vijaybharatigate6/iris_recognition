@@ -18,7 +18,7 @@
 
 #####  Add the dependency to use library in project:
   ```
-     implementation 'com.github.vijaybharatigate6:iris_recognition:1.0'  
+     implementation 'com.github.vijaybharatigate6:iris_recognition:1.1'  
   ```  
  
 ## Run Project
